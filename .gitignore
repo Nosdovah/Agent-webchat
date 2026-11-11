@@ -11,3 +11,9 @@ server.log
 # Python
 __pycache__/
 *.pyc
+
+# Logs
+*.log
+
+# Share-doc with live API key — keep local, share directly (repo is public)
+USAGE.md

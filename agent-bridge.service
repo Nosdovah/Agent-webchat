@@ -1,0 +1,17 @@
+[Unit]
+Description=Agent Bridge (shared backend webchat for N agents)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/octarine/agent-bridge
+Environment=BRIDGE_HOST=127.0.0.1
+Environment=BRIDGE_PORT=8791
+# Environment=BRIDGE_API_KEY=change-me
+ExecStart=/usr/bin/python3 /home/octarine/agent-bridge/server.py
+Restart=on-failure
+RestartSec=3
+User=octarine
+
+[Install]
+WantedBy=multi-user.target
